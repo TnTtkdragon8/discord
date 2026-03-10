@@ -201,8 +201,8 @@ async def ban(ctx, member: discord.Member):
 
 if __name__ == "__main__":
     token = os.getenv('TOKEN')
-    if not token:
-        print("❌ خطأ: لم يتم تعيين متغير TOKEN")
-    else:
+    if token:
         print("✅ جاري تشغيل البوت")
         bot.run(token)
+    else:
+        print("❌ خطأ: لم يتم تعيين متغير TOKEN")
