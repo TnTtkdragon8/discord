@@ -202,10 +202,16 @@ async def ban(ctx, member: discord.Member):
 # ------------------- تشغيل البوت -------------------
 # ------------------- تشغيل البوت -------------------
 if __name__ == "__main__":
+    # 1. سحب التوكن من إعدادات ريلواي
     token = os.environ.get('TOKEN')
 
+    # 2. التأكد إن التوكن موجود فعلاً
     if not token:
         print("❌ خطأ: لم يتم تعيين متغير TOKEN في إعدادات Railway")
     else:
+        # 3. لو موجود، شغل البوت فوراً
         print("✅ جاري تشغيل البوت...")
-        bot.run(token)
+        try:
+            bot.run(token)
+        except Exception as e:
+            print(f"❌ فشل تشغيل البوت: {e}"))
