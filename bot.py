@@ -199,11 +199,10 @@ async def ban(ctx, member: discord.Member):
     except Exception as e:
         await ctx.send(f"❌ حصل خطأ: {e}")
 
-# ------------------- تشغيل البوت -------------------
 if __name__ == "__main__":
-    token = os.environ.get('TOKEN')
-    bot.run(token)
-        print("❌ خطأ في إعدادات Railway (Variables): لم يتم تعيين متغير TOKEN")
+    token = os.getenv('TOKEN')
+    if not token:
+        print("❌ خطأ: لم يتم تعيين متغير TOKEN")
     else:
-        print("✅ ...جاري تشغيل البوت")
+        print("✅ جاري تشغيل البوت")
         bot.run(token)
