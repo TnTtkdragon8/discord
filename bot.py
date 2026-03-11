@@ -12,7 +12,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
-bot = commands.Bot(command_prefix="", intents=intents)
+bot = commands.Bot(command_prefix=".", intents=intents)
 
 # ------------------- التخزين المؤقت -------------------
 warnings = {}          # التحذيرات
@@ -20,7 +20,7 @@ balances = {}          # الأرصدة (الكريديت)
 # ------------------------------------------------------
 
 # ------------------- إعدادات الترحيب -------------------
-WELCOME_CHANNEL_NAME = "الترحيب"
+WELCOME_CHANNEL_NAME = "モ・「👋」الـتـرحـيـب"
 WELCOME_IMAGE_URL = "https://i.postimg.cc/4d6Yww05/lwjw.png"
 # ------------------------------------------------------
 
@@ -52,7 +52,7 @@ def is_basha(ctx):
 def is_owner(ctx):
     """لأمر و – مخصص ليك وحدك (غير كدة مش هيشتغل)"""
     # استبدل الرقم ده برقم حسابك (خذ ID حسابك من Discord)
-    return ctx.author.id == 123456789012345678  # ⚠️ غير الرقم ده لـ ID حسابك
+    return ctx.author.id == 1177016677997740065  # ⚠️ غير الرقم ده لـ ID حسابك
 # ----------------------------------------------------------------
 
 # ------------------- حدث تشغيل البوت -------------------
@@ -340,4 +340,5 @@ if __name__ == "__main__":
         print("✅ جاري تشغيل البوت")
         bot.run(token)
     else:
+
         print("❌ خطأ: لم يتم تعيين متغير TOKEN")
