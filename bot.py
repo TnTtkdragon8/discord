@@ -489,7 +489,7 @@ async def on_ready():
     load_all_data()
     bot.add_view(TicketPanelView())
     bot.add_view(TicketManageView())
-    print("✅ جاري تشغيل البوت...")
+    print("✅ VERSION 777")
     print(f"البوت شغال كـ {bot.user}")
 
 @bot.event
@@ -1132,4 +1132,5 @@ if __name__ == "__main__":
     if token:
         bot.run(token)
     else:
+
         print("❌ خطأ: لم يتم تعيين متغير TOKEN")
