@@ -51,7 +51,7 @@ GAMES_CHANNEL_NAME = "モ・「🎉」الــفــعــالــيــات"
 TICKET_CATEGORY_NAME = "🎫 Tickets"
 
 BAD_WORDS = [
-    "كسم", "شرموط", "عرص", "خول", "متناك", "ابن الكلب", "ياكلخ", "منيوك"
+    ""
 ]
 
 # رتب المستوى
@@ -797,7 +797,7 @@ async def ban_command(ctx, member: discord.Member, *, reason: str = "بدون س
 
 @bot.command(name="حذف")
 async def clear_command(ctx, amount: int):
-    if not is_owner_user(ctx.author):
+    if not (is_owner_user(ctx.author) or is_admin_member(ctx.author)):
         await count_unauthorized_attempt(ctx)
         return
 
@@ -1133,4 +1133,5 @@ if __name__ == "__main__":
         bot.run(token)
     else:
         print("❌ خطأ: لم يتم تعيين متغير TOKEN")
+
 
