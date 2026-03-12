@@ -1101,7 +1101,7 @@ async def xo_cancel_command(ctx):
 # =========================
 # التكت
 # =========================
-@bot.command(name="ارسلتكت")
+@bot.command(name="تكت")
 async def send_ticket_panel_command(ctx):
     if not is_admin_member(ctx.author):
         await count_unauthorized_attempt(ctx)
@@ -1133,3 +1133,4 @@ if __name__ == "__main__":
         bot.run(token)
     else:
         print("❌ خطأ: لم يتم تعيين متغير TOKEN")
+
